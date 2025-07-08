@@ -1,7 +1,7 @@
 /***************************************************************
  * Problem    : A. Forked (Codeforces Round 914 (Div. 2))
  * Author     : Abhay Palway
- * Date       :   July 2025
+ * Date       : 08 July 2025
  ****************************************************************/
 
 #include <bits/stdc++.h>
@@ -11,23 +11,28 @@ using namespace std;
 
 void solve()
 {
-    int n;
-    string s;
-    cin >> n >> s;
-    int maxs = 0, c = 1;
-    for (int i = 0; i < n; i++)
+    long long a, b, xK, yK, xQ, yQ;
+    cin >> a >> b >> xK >> yK >> xQ >> yQ;
+    vector<int> dx = {1, 1, -1, -1};
+    vector<int> dy = {1, -1, -1, 1};
+    set<pair<int, int>> king, queen;
+    for (int i = 0; i < 4; i++)
     {
-        if (s[i] == s[i + 1])
-        {
-            c++;
-        }
-        else
-        {
-            c = 1;
-        }
-        maxs = max(maxs, c);
+        king.insert({xK + dx[i] * a, yK + dy[i] * b});
+        king.insert({xK + dx[i] * b, yK + dy[i] * a});
+        queen.insert({xQ + dx[i] * a, yQ + dy[i] * b});
+        queen.insert({xQ + dx[i] * b, yQ + dy[i] * a});
     }
-    cout << maxs + 1 << endl;
+    int ans = 0;
+    for (auto it : king)
+    {
+        if (queen.find(it) != queen.end())
+        {
+            ans++;
+        }
+    }
+    cout << ans << endl;
+    return;
 }
 
 /*================== SOLUTION END =====================*/

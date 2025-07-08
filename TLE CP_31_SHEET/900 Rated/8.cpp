@@ -1,7 +1,7 @@
 /***************************************************************
  * Problem    : B. Comparison String (Educational Codeforces Round 149 (Div. 2))
  * Author     : Abhay Palway
- * Date       :   July 2025
+ * Date       : 08 July 2025
  ****************************************************************/
 
 #include <bits/stdc++.h>
