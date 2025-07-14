@@ -7,7 +7,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*================== SOLUTION START =====================*/
+/*==================SOLUTION START=====================*/
 
 void solve()
 {
