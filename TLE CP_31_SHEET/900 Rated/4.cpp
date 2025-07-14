@@ -14,15 +14,15 @@ void solve()
     long long a, b, n;
     cin >> a >> b >> n;
     vector<long long> v(n);
-    long long ans = b;
+    long long min_time = b;
 
     for (int i = 0; i < n; i++)
     {
         cin >> v[i];
-        ans += min(v[i], a - 1);
+        min_time += min(v[i], a - 1);
     }
 
-    cout << ans << '\n';
+    cout << min_time << '\n';
 }
 /*================== SOLUTION END =====================*/
 int main()
